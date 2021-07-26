@@ -28,7 +28,11 @@ const FormAutoFill = new Vue({
 	  mscore: 'entry.1781803609',
 	  sscore: 'entry.1172586853',
 	  nscore: 'entry.554262738',
-	  check: 'entry.255530604',
+	  ccheck: 'entry.255530604',
+	  echeck: 'entry.2052448645',
+	  mcheck: 'entry.793282621',
+	  scheck: 'entry.958465042',
+	  ncheck: 'entry.1878704465',
 	  message: 'entry.813348934'
     },
 
@@ -58,7 +62,11 @@ const FormAutoFill = new Vue({
 		&${this.input.sscore}=${this.person.sscore}
 		&${this.input.nscore}=${this.person.nscore}
 		&${this.input.message}=${this.person.message}
-		&${this.input.check}=${this.checkedSubjects}`;
+		&${this.input.ccheck}=${this.checkedSubjects.includes("Chinese")?1:""}
+		&${this.input.echeck}=${this.checkedSubjects.includes("English")?1:""}
+		&${this.input.mcheck}=${this.checkedSubjects.includes("Math")?1:""}
+		&${this.input.scheck}=${this.checkedSubjects.includes("Society")?1:""}
+		&${this.input.ncheck}=${this.checkedSubjects.includes("Nature")?1:""}`;
         fetch(this.formAction + '?' + params, {
           method: 'POST'
         }).catch(err => {
