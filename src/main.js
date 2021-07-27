@@ -61,7 +61,7 @@ const FormAutoFill = new Vue({
 		&${this.input.mscore}=${this.person.mscore}
 		&${this.input.sscore}=${this.person.sscore}
 		&${this.input.nscore}=${this.person.nscore}
-		&${this.input.message}=${this.person.message}
+		&${this.input.message}=${this.person.message === undefined ? "" : this.person.message}
 		&${this.input.ccheck}=${this.checkedSubjects.includes("Chinese")?1:""}
 		&${this.input.echeck}=${this.checkedSubjects.includes("English")?1:""}
 		&${this.input.mcheck}=${this.checkedSubjects.includes("Math")?1:""}
